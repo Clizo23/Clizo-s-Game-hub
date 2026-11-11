@@ -107,203 +107,142 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,229,255,0.05);
         }
 
-        /* CSS Retraced Action Scene Preview */
         .game-preview {
             width: 100%;
             height: 260px;
-            background: linear-gradient(135deg, #4b526d 0%, #767d96 100%);
             border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.1);
             overflow: hidden;
             position: relative;
         }
 
-        .preview-scene {
+        /* PREVIEW 1: Ball Pistol Duel CSS Retrace */
+        .scene-ball-pistol {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(135deg, #4b526d 0%, #767d96 100%);
+        }
+        .scene-ball-pistol .preview-transform {
             width: 100%;
             height: 100%;
             position: relative;
             transform: rotate(-30deg) scale(1.15);
             transform-origin: center center;
         }
+        .scene-ball-pistol .track {
+            position: absolute; top: 50%; left: -20%; width: 140%; height: 90px;
+            background: #2b2b36; border-top: 6px solid #1a1a24; border-bottom: 6px solid #1a1a24; transform: translateY(-50%);
+        }
+        .scene-ball-pistol .ball-blue {
+            position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 130px; height: 130px;
+            background: radial-gradient(circle at 30% 30%, #00a2ff, #0055ff); border-radius: 50%; border: 5px solid #181920;
+        }
+        .scene-ball-pistol .ball-red {
+            position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 130px; height: 130px;
+            background: radial-gradient(circle at 30% 30%, #ff0077, #d00040); border-radius: 50%; border: 5px solid #181920;
+        }
+        .scene-ball-pistol .gun-blue {
+            position: absolute; left: 110px; top: 50%; transform: translateY(-50%); width: 70px; height: 40px; background: #ffb703; border-radius: 4px;
+        }
+        .scene-ball-pistol .gun-blue::after {
+            content: ''; position: absolute; bottom: -15px; left: 15px; width: 20px; height: 20px; background: #ffb703; transform: skewX(-15deg);
+        }
+        .scene-ball-pistol .gun-red {
+            position: absolute; right: 110px; top: 50%; transform: translateY(-50%) scaleX(-1); width: 70px; height: 40px; background: #ffb703; border-radius: 4px;
+        }
+        .scene-ball-pistol .gun-red::after {
+            content: ''; position: absolute; bottom: -15px; left: 15px; width: 20px; height: 20px; background: #ffb703; transform: skewX(-15deg);
+        }
+        .scene-ball-pistol .bullet-b1 { position: absolute; left: 200px; top: 48%; width: 14px; height: 8px; background: #00d2ff; border-radius: 4px; box-shadow: 0 0 8px #00d2ff; }
+        .scene-ball-pistol .bullet-r1 { position: absolute; right: 200px; top: 45%; width: 14px; height: 8px; background: #ff0055; border-radius: 4px; box-shadow: 0 0 8px #ff0055; }
 
-        .track {
-            position: absolute;
-            top: 50%;
-            left: -20%;
-            width: 140%;
-            height: 90px;
-            background: #2b2b36;
-            border-top: 6px solid #1a1a24;
-            border-bottom: 6px solid #1a1a24;
-            transform: translateY(-50%);
+        /* PREVIEW 2: Gorilla Tag VR CSS Retrace */
+        .scene-gorilla-tag {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: radial-gradient(circle at center, #bf4b1b 0%, #6e2008 100%);
+            overflow: hidden;
         }
-
-        .ball-blue {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 130px;
-            height: 130px;
-            background: radial-gradient(circle at 30% 30%, #00a2ff, #0055ff);
-            border-radius: 50%;
-            border: 5px solid #181920;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        /* Background Ship Deck / Ropes */
+        .scene-gorilla-tag .deck-planks {
+            position: absolute; bottom: 0; width: 100%; height: 90px;
+            background: repeating-linear-gradient(90deg, #4a2810 0px, #4a2810 40px, #361c0a 41px, #361c0a 44px);
+            border-top: 4px solid #231105;
         }
-
-        .ball-red {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 130px;
-            height: 130px;
-            background: radial-gradient(circle at 30% 30%, #ff0077, #d00040);
-            border-radius: 50%;
-            border: 5px solid #181920;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        .scene-gorilla-tag .ship-ropes {
+            position: absolute; top: -20px; left: -10%; width: 120%; height: 180px;
+            background: repeating-linear-gradient(45deg, transparent 0, transparent 25px, #2b180a 26px, #2b180a 30px);
+            opacity: 0.7;
         }
-
-        .gun-blue {
-            position: absolute;
-            left: 110px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 70px;
-            height: 40px;
-            background: #ffb703;
-            border-radius: 4px;
-            box-shadow: -2px 2px 0px #c78800;
+        .scene-gorilla-tag .bg-title {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-size: 85px; font-weight: 900; color: #ffffff; font-family: 'Arial Black', sans-serif;
+            letter-spacing: 6px; white-space: nowrap; opacity: 0.9;
         }
-        .gun-blue::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 15px;
-            width: 20px;
-            height: 20px;
-            background: #ffb703;
-            transform: skewX(-15deg);
+        /* Lava Gorilla Body */
+        .scene-gorilla-tag .gorilla-container {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -40%);
+            width: 220px; height: 200px; display: flex; flex-direction: column; align-items: center; z-index: 5;
         }
-
-        .gun-red {
-            position: absolute;
-            right: 110px;
-            top: 50%;
-            transform: translateY(-50%) scaleX(-1);
-            width: 70px;
-            height: 40px;
-            background: #ffb703;
-            border-radius: 4px;
-            box-shadow: 2px 2px 0px #c78800;
+        .scene-gorilla-tag .gorilla-body {
+            position: relative; width: 150px; height: 140px; border-radius: 50% 50% 45% 45%;
+            background: repeating-radial-gradient(circle at 30% 30%, #ff4500 0, #ff4500 8px, #1a0500 9px, #1a0500 16px);
+            border: 4px solid #000; box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
         }
-        .gun-red::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 15px;
-            width: 20px;
-            height: 20px;
-            background: #ffb703;
-            transform: skewX(-15deg);
+        /* Gorilla Arms */
+        .scene-gorilla-tag .arm-left {
+            position: absolute; left: -50px; top: 40px; width: 90px; height: 45px;
+            background: repeating-linear-gradient(45deg, #ff4500, #1a0500 12px);
+            border-radius: 20px; border: 3px solid #000; transform: rotate(-25deg);
         }
-
-        .bullet-blue-shot {
-            position: absolute;
-            left: 200px;
-            top: 48%;
-            width: 14px;
-            height: 8px;
-            background: #00d2ff;
-            border-radius: 4px;
-            box-shadow: 0 0 8px #00d2ff;
+        .scene-gorilla-tag .arm-right {
+            position: absolute; right: -60px; top: 45px; width: 100px; height: 45px;
+            background: repeating-linear-gradient(-45deg, #ff4500, #1a0500 12px);
+            border-radius: 20px; border: 3px solid #000; transform: rotate(20deg);
         }
-        .bullet-blue-shot-2 {
-            position: absolute;
-            left: 225px;
-            top: 43%;
-            width: 12px;
-            height: 8px;
-            background: #00d2ff;
-            border-radius: 4px;
-            box-shadow: 0 0 8px #00d2ff;
+        /* Gorilla Face */
+        .scene-gorilla-tag .gorilla-face {
+            position: absolute; top: 25px; left: 50%; transform: translateX(-50%);
+            width: 75px; height: 75px; background: #c8c8cb; border-radius: 40% 40% 50% 50%; border: 3px solid #000;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .scene-gorilla-tag .eyes { display: flex; gap: 10px; margin-top: -8px; }
+        .scene-gorilla-tag .eye { width: 18px; height: 18px; background: #fff; border-radius: 50%; border: 2px solid #000; position: relative; }
+        .scene-gorilla-tag .eye::after { content: ''; position: absolute; top: 4px; left: 4px; width: 8px; height: 8px; background: #000; border-radius: 50%; }
+        .scene-gorilla-tag .chest-badge {
+            position: absolute; bottom: 15px; background: #111; color: #fff; font-size: 9px; font-weight: bold; padding: 1px 6px; border-radius: 3px;
+        }
+        /* Yellow Banana Hat */
+        .scene-gorilla-tag .banana-hat {
+            position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+            width: 70px; height: 35px; background: #ffe600; border-radius: 0 0 50% 50%; border: 3px solid #000;
+        }
+        .scene-gorilla-tag .banana-hat::before {
+            content: ''; position: absolute; top: -12px; left: 10px; width: 14px; height: 20px; background: #ffe600; border-radius: 50% 0 0 0; border-left: 3px solid #000;
+        }
+        .scene-gorilla-tag .banana-hat::after {
+            content: ''; position: absolute; top: -12px; right: 10px; width: 14px; height: 20px; background: #ffe600; border-radius: 0 50% 0 0; border-right: 3px solid #000;
         }
 
-        .bullet-red-shot {
-            position: absolute;
-            right: 200px;
-            top: 45%;
-            width: 14px;
-            height: 8px;
-            background: #ff0055;
-            border-radius: 4px;
-            box-shadow: 0 0 8px #ff0055;
-        }
-        .bullet-red-shot-2 {
-            position: absolute;
-            right: 225px;
-            top: 52%;
-            width: 12px;
-            height: 8px;
-            background: #ff0055;
-            border-radius: 4px;
-            box-shadow: 0 0 8px #ff0055;
-        }
-
-        .game-info {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .game-tag {
-            font-size: 11px;
-            color: #00e5ff;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .game-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.3);
-        }
-
-        .game-desc {
-            font-size: 13px;
-            color: #aaa;
-            line-height: 1.4;
-        }
+        .game-info { display: flex; flex-direction: column; gap: 6px; }
+        .game-tag { font-size: 11px; color: #00e5ff; letter-spacing: 2px; text-transform: uppercase; }
+        .game-title { font-size: 24px; font-weight: bold; color: #fff; letter-spacing: 1px; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .game-desc { font-size: 13px; color: #aaa; line-height: 1.4; }
 
         .play-game-btn {
-            margin-top: 6px;
-            background: #00e5ff;
-            color: #0b0b10;
-            border: none;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
-            transition: all 0.2s ease;
-            text-align: center;
-            text-decoration: none;
+            margin-top: 6px; background: #00e5ff; color: #0b0b10; border: none; padding: 12px;
+            font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; text-transform: uppercase;
+            letter-spacing: 1px; box-shadow: 0 0 15px rgba(0, 229, 255, 0.4); transition: all 0.2s ease;
+            text-align: center; text-decoration: none;
         }
-        .play-game-btn:hover {
-            background: #33ecff;
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.7);
-            transform: scale(1.02);
-        }
+        .play-game-btn:hover { background: #33ecff; box-shadow: 0 0 25px rgba(0, 229, 255, 0.7); transform: scale(1.02); }
     </style>
 </head>
 <body>
 
-    <!-- Splash Screen with direct click handler -->
+    <!-- Splash Screen -->
     <div id="splash-screen" onclick="enterHub()">
         <h1>Clizo's Games</h1>
         <div class="click-prompt">CLICK TO ENTER</div>
@@ -315,19 +254,8 @@
             <button class="nav-btn" onclick="prevGame()">&#10094;</button>
             
             <div class="game-card" id="cardContainer">
-                <div class="game-preview">
-                    <div class="preview-scene">
-                        <div class="track"></div>
-                        <div class="ball-blue"></div>
-                        <div class="gun-blue"></div>
-                        <div class="bullet-blue-shot"></div>
-                        <div class="bullet-blue-shot-2"></div>
-                        
-                        <div class="ball-red"></div>
-                        <div class="gun-red"></div>
-                        <div class="bullet-red-shot"></div>
-                        <div class="bullet-red-shot-2"></div>
-                    </div>
+                <div class="game-preview" id="gamePreviewBox">
+                    <!-- Dynamic preview loaded via JS -->
                 </div>
 
                 <div class="game-info">
@@ -335,7 +263,7 @@
                     <div class="game-title" id="gameTitle">Ball Pistol Duel</div>
                     <div class="game-desc" id="gameDesc">Multiplayer 2D ball shooter featuring 8 unique abilities, custom map layouts, and online account matchmaking.</div>
                 </div>
-                <a href="https://your-ball-game-vercel-link.vercel.app" id="gameLink" class="play-game-btn" target="_blank">Play Game</a>
+                <a href="#" id="gameLink" class="play-game-btn" target="_blank">Play Game</a>
             </div>
 
             <button class="nav-btn" onclick="nextGame()">&#10095;</button>
@@ -348,13 +276,15 @@
                 tag: "CH 01",
                 title: "Ball Pistol Duel",
                 desc: "Multiplayer 2D ball shooter featuring 8 unique abilities, custom map layouts, and online account matchmaking.",
-                link: "https://your-ball-game-vercel-link.vercel.app"
+                link: "https://your-ball-game-vercel-link.vercel.app",
+                previewType: "ball-pistol"
             },
             {
                 tag: "CH 02",
-                title: "Coming Soon Game 2",
-                desc: "Another awesome webport or independent project coming soon to Clizo's Hub.",
-                link: "#"
+                title: "Gorilla Tag VR",
+                desc: "Gorilla Tag style VR experience featuring custom lava skin cosmetics, physics movement, and interactive maps.",
+                link: "#",
+                previewType: "gorilla-tag"
             }
         ];
 
@@ -366,6 +296,7 @@
             setTimeout(() => {
                 splash.style.display = 'none';
                 document.getElementById('hub-container').style.display = 'flex';
+                updateGameCard();
             }, 500);
         }
 
@@ -375,6 +306,43 @@
             document.getElementById('gameTitle').innerText = game.title;
             document.getElementById('gameDesc').innerText = game.desc;
             document.getElementById('gameLink').href = game.link;
+
+            const previewBox = document.getElementById('gamePreviewBox');
+            if (game.previewType === 'ball-pistol') {
+                previewBox.innerHTML = `
+                    <div class="scene-ball-pistol">
+                        <div class="preview-transform">
+                            <div class="track"></div>
+                            <div class="ball-blue"></div>
+                            <div class="gun-blue"></div>
+                            <div class="bullet-b1"></div>
+                            <div class="ball-red"></div>
+                            <div class="gun-red"></div>
+                            <div class="bullet-r1"></div>
+                        </div>
+                    </div>`;
+            } else if (game.previewType === 'gorilla-tag') {
+                previewBox.innerHTML = `
+                    <div class="scene-gorilla-tag">
+                        <div class="ship-ropes"></div>
+                        <div class="bg-title">GORILLA</div>
+                        <div class="deck-planks"></div>
+                        <div class="gorilla-container">
+                            <div class="gorilla-body">
+                                <div class="banana-hat"></div>
+                                <div class="arm-left"></div>
+                                <div class="arm-right"></div>
+                                <div class="gorilla-face">
+                                    <div class="eyes">
+                                        <div class="eye"></div>
+                                        <div class="eye"></div>
+                                    </div>
+                                    <div class="chest-badge">MONKE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+            }
         }
 
         function nextGame() {

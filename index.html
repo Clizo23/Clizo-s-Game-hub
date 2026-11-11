@@ -18,7 +18,7 @@
             overflow: hidden;
         }
 
-        /* Click To Enter Splash Screen */
+        /* Splash Screen */
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -181,21 +181,20 @@
 </head>
 <body>
 
-    <!-- Splash Screen matching reference 1 -->
+    <!-- Splash Screen -->
     <div id="splash-screen" onclick="enterHub()">
         <h1>Clizo's Games</h1>
         <div class="click-prompt">CLICK TO ENTER</div>
     </div>
 
-    <!-- Hub Carousel matching reference 2 -->
+    <!-- Hub Carousel -->
     <div id="hub-container">
         <div class="carousel-wrapper">
             <button class="nav-btn" onclick="prevGame()">&#10094;</button>
             
             <div class="game-card" id="cardContainer">
                 <div class="game-preview" id="gamePreviewBox">
-                    <!-- Dynamic preview / image placeholder -->
-                    <div style="color: #555; font-size: 13px;">Game Preview</div>
+                    <!-- Image dynamically injected here -->
                 </div>
                 <div class="game-info">
                     <div class="game-tag" id="gameTag">CH 01</div>
@@ -210,14 +209,13 @@
     </div>
 
     <script>
-        // List your games here! You can add as many as you want.
         const games = [
             {
                 tag: "CH 01",
                 title: "Ball Pistol Duel",
                 desc: "Multiplayer 2D ball shooter featuring 8 unique abilities, custom map layouts, and online account matchmaking.",
-                link: "https://ball-pistol-duels.vercel.app/", // Put your Vercel game link here
-                image: "" // Optional: Image URL if you want a thumbnail preview
+                link: "https://your-ball-game-vercel-link.vercel.app", // Replace with your actual game Vercel link
+                image: "ball shooting.jpg" // Uses your actual uploaded screenshot as the card image preview!
             },
             {
                 tag: "CH 02",
